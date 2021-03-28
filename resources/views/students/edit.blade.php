@@ -1,7 +1,11 @@
-@extends('students.layout')
+@extends('layouts.app')
 
 @section('content')
-
+@guest
+  @if (Route::has('login'))
+  <div class='text-center'>please log in</div>
+  @endif
+  @else
 <div class="row">
     <div class="col-lg-12 my-5">
       <div class="pull-left">
@@ -54,5 +58,5 @@
     </div>
   </div>
   </form>
-
+@endguest
 @endsection

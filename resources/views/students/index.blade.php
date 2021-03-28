@@ -1,9 +1,17 @@
-@extends('students.layout')
+
+@extends('layouts.app')
+
 @section('content')
+
+@guest
+  @if (Route::has('login'))
+  <div class='text-center'>please log in</div>
+  @endif
+  @else
   <div class="pull-left mt-5">
   <h2>Student System</h2>
   </div>
-
+  
   <div class="row">
     <div class="col-lg-12 my-5">
       <div class="pull-right">
@@ -11,6 +19,7 @@
       </div>
     </div>
   </div>
+ 
 
   @if ($massage = Session::get('success'))
     <div class="alert alert-success">
@@ -45,5 +54,6 @@
     </tr>
     @endforeach
   </table>
-
+  @endguest
   @endsection
+
