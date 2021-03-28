@@ -21,6 +21,7 @@
     </div>
 </div> -->
 <div class='container my-5 text-center'>
-    <a href="{{ route('students.index') }}" class='btn btn-primary'>Start</a>
+    <h3>Welcome Mr.  {{ Auth::user()->name }} </h3> <br>
+    <a href="{{ route('students.index') }}" class='btn btn-primary my-3'>let's start</a>
 </div>
 @endsection
